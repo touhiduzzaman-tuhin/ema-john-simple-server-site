@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
-const admin = require("firebase-admin");
+// const admin = require("firebase-admin");
 
 const app = express();
 const port = 5000;
@@ -11,11 +11,11 @@ const port = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-var serviceAccount = require("./configs/ema-john-simple-authentication-firebase-adminsdk-itjvb-c6033c568c.json");
+// var serviceAccount = require("./configs/ema-john-simple-authentication-firebase-adminsdk-itjvb-c6033c568c.json");
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-});
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount)
+// });
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.9mvne.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
